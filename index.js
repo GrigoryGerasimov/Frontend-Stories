@@ -1,4 +1,4 @@
-import { switchTo } from "./function/switchTo.js"
+import { switchTo } from "./oper/switchTo.js"
 
 (() => {
     window.addEventListener("load", () => {
