@@ -3,12 +3,11 @@ const getActiveElem = (elem, elemClass) => elem.classList.contains(elemClass) ? 
 function getActiveChunkElems(nodeCollection, activeNodeClass) {
     const nodeCollectionArray = Array.from(nodeCollection)
     const currentNode = nodeCollectionArray.find(e => getActiveElem(e, activeNodeClass))
-    const currentNodeIndex = nodeCollectionArray.findIndex(e => getActiveElem(e, activeNodeClass))
     const prevNode = currentNode.previousElementSibling
     const nextNode = currentNode.nextElementSibling
 
     return {
-        currentNode, currentNodeIndex, prevNode, nextNode
+        currentNode, prevNode, nextNode
     }
 }
 

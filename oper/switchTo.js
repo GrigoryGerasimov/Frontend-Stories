@@ -1,15 +1,15 @@
 import { getActiveChunkElems } from "./getChunkElems.js"
 
 function switchTo(to, collection, activeClass) {
-    const { currentNode, currentNodeIndex, prevNode, nextNode } = getActiveChunkElems(collection, activeClass)
+    const { currentNode, prevNode, nextNode } = getActiveChunkElems(collection, activeClass)
 
     if (to === "back") {
-        if (currentNodeIndex > 0) {
+        if (prevNode) {
             currentNode.classList.remove(activeClass)
             prevNode.classList.add(activeClass)
         }
     } else if (to === "forward") {
-        if (currentNodeIndex < collection.length - 1) {
+        if (nextNode) {
             currentNode.classList.remove(activeClass)
             nextNode.classList.add(activeClass)
         }
