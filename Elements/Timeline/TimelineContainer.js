@@ -1,16 +1,14 @@
-import { createElem } from "../../dom/createElem"
+import { createElem } from "../../dom/createElem.js"
 
 function TimelineContainer() {
     if (!new.target) return new TimelineContainer()
 
-    create = function () {
-        const newTimelineContainer = document.createElement("div")
-        newTimelineContainer.classList.add("timeline")
-        this.elem = newTimelineContainer
+    this.create = function () {
+        this.elem = createElem({elemTag: "div", elemClasses: ["timeline"]})
         return this
     }
     
-    mount = function (parentElem) {
+    this.mount = function (parentElem) {
         if (this.elem) parentElem.append(this.elem)
         return this
     }

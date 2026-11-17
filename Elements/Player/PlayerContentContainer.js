@@ -1,16 +1,14 @@
-import { createElem } from "../../dom/createElem"
+import { createElem } from "../../dom/createElem.js"
 
 function PlayerContentContainer() {
     if (!new.target) return new PlayerContentContainer()
 
-    create = function () {
-        const newPlayerContentContainer = document.createElement("div")
-        newPlayerContentContainer.classList.add("player-content")
-        this.elem = newPlayerContentContainer
+    this.create = function () {
+        this.elem = createElem({elemTag: "div", elemClasses: ["player-content"]})
         return this
     }
 
-    mount = function (parentElem) {
+    this.mount = function (parentElem) {
         if (this.elem) parentElem.append(this.elem)
         return this
     }
