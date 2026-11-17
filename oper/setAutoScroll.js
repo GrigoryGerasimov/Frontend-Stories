@@ -1,9 +1,9 @@
 import { getActiveChunkElems } from "./getActiveChunkElems.js"
 
-function setAutoScroll(scroll, step, collection, classes) {
+function setAutoScroll(scroll, time, step, collection, classes) {
     const [timelineChunkActiveClass, timelineChunkInnerClass] = classes
 
-    const autoScroll = setInterval(() => {
+    const autoScrollTimer = setInterval(() => {
         const { currentInnerNode, currentInnerNodeWidth, nextNode } = getActiveChunkElems(collection, timelineChunkActiveClass, timelineChunkInnerClass)
 
         if (currentInnerNodeWidth === 100) {
@@ -14,9 +14,9 @@ function setAutoScroll(scroll, step, collection, classes) {
 
         currentInnerNode.style.width = `${currentInnerNodeWidth + step}%`
 
-    }, 2000 * step / 100)
+    }, time * step / 100)
 
-    return autoScroll
+    return autoScrollTimer
 }
 
 export { setAutoScroll }
