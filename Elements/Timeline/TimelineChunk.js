@@ -1,18 +1,17 @@
-import { createElem } from "../../dom/createElem"
-import { TimelineChunkInner } from "./TimelineChunkInner"
+import { createElem } from "../../dom/createElem.js"
+import { TimelineChunkInner } from "./TimelineChunkInner.js"
 
 function TimelineChunk() {
     if (!new.target) return new TimelineChunk()
 
-    create = function () {
-        const newTimelineChunk = document.createElement("div")
-        newTimelineChunk.classList.add("timeline-chunk")
+    this.create = function () {
+        const newTimelineChunk = createElem({elemTag: "div", elemClasses: ["timeline-chunk"]})
         new TimelineChunkInner().create().mount(newTimelineChunk)
         this.elem = newTimelineChunk
         return this
     }
     
-    mount = function (parentElem) {
+    this.mount = function (parentElem) {
         if (this.elem) parentElem.append(this.elem)
         return this
     }

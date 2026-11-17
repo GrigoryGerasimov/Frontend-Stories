@@ -1,18 +1,14 @@
-import { createElem } from "../../dom/createElem"
+import { createElem } from "../../dom/createElem.js"
 
 function PlayerImage() {
     if (!new.target) return new PlayerImage()
 
-    create = function (elemParams) {
-        const newPlayerImage = document.createElement("img")
-        for (const elemParam in elemParams) {
-            newPlayerImage[elemParam] = elemParams[elemParam]
-        }
-        this.elem = newPlayerImage
+    this.create = function (elemParams) {
+        this.elem = createElem({elemTag: "img", elemParams: elemParams})
         return this
     }
 
-    mount = function (parentElem) {
+    this.mount = function (parentElem) {
         if (this.elem) parentElem.append(this.elem)
         return this
     }
