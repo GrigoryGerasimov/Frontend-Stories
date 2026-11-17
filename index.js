@@ -1,5 +1,6 @@
 import { switchTo } from "./oper/switchTo.js"
-import { getActiveChunkElems } from "./oper/getChunkElems.js"
+import { getActiveChunkElems } from "./oper/getActiveChunkElems.js"
+import { getParsedStyleWidth } from "./utils/getParsedStyleWidth.js"
 
 (() => {
     window.addEventListener("load", () => {
@@ -14,9 +15,9 @@ import { getActiveChunkElems } from "./oper/getChunkElems.js"
         playerChunkSwitcherNext.addEventListener("click", forward)
 
         setInterval(() => {
-            const { currentNode, nextNode } = getActiveChunkElems(timelineChunkCollection, "timeline-chunk-active")
-            const currentInnerNode = currentNode.querySelector(".timeline-chunk-inner")
-            let currentInnerNodeWidth = parseFloat(currentInnerNode.style.width) || 0
+            const { currentInnerNode, nextNode } = getActiveChunkElems(timelineChunkCollection, "timeline-chunk-active", ".timeline-chunk-inner")
+
+            let currentInnerNodeWidth = getParsedStyleWidth(currentInnerNode)
 
             if (currentInnerNodeWidth === 100) {
                 forward()
@@ -36,11 +37,11 @@ import { getActiveChunkElems } from "./oper/getChunkElems.js"
         }
 
         function back() {
-            switchBackwards(timelineChunkCollection, "timeline-chunk-active")
+            switchBackwards(timelineChunkCollection, "timeline-chunk-active", ".timeline-chunk-inner")
             switchBackwards(playerChunkCollection, "player-chunk-active")
         }
         function forward() {
-            switchForwards(timelineChunkCollection, "timeline-chunk-active")
+            switchForwards(timelineChunkCollection, "timeline-chunk-active", ".timeline-chunk-inner")
             switchForwards(playerChunkCollection, "player-chunk-active")
         }
     })
