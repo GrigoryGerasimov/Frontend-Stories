@@ -1,29 +1,39 @@
-import { switchTo } from "./oper/switchTo.js"
-import { getActiveChunkElems } from "./oper/getActiveChunkElems.js"
+import { scrollTo } from "./oper/scrollTo.js"
+import { setAutoScroll } from "./oper/setAutoScroll.js"
 
 (() => {
     window.addEventListener("load", () => {
-        const playerChunkSwitcherPrev = document.querySelector(".player-chunk-prev")
-        const playerChunkSwitcherNext = document.querySelector(".player-chunk-next")
+        const playerChunkScrollerPrev = document.querySelector(".player-chunk-prev")
+        const playerChunkScrollerNext = document.querySelector(".player-chunk-next")
         const timelineChunkCollection = document.querySelectorAll(".timeline-chunk")
         const playerChunkCollection = document.querySelectorAll(".player-chunk")
 
-        const step = 1
+        const STEP = 1
+        const TIMELINE_CHUNK_ACTIVE_CLASS = "timeline-chunk-active"
+        const TIMELINE_CHUNK_INNER_CLASS = "timeline-chunk-inner"
+        const PLAYER_CHUNK_ACTIVE_CLASS = "player-chunk-active"
 
-        playerChunkSwitcherPrev.addEventListener("click", () => switchTo("back", [timelineChunkCollection, playerChunkCollection]))
-        playerChunkSwitcherNext.addEventListener("click", () => switchTo("forward", [timelineChunkCollection, playerChunkCollection]))
+        playerChunkScrollerPrev.addEventListener(
+            "click", () => scrollTo(
+                "back", 
+                [timelineChunkCollection, playerChunkCollection], 
+                [TIMELINE_CHUNK_ACTIVE_CLASS, TIMELINE_CHUNK_INNER_CLASS, PLAYER_CHUNK_ACTIVE_CLASS]
+            ))
+        playerChunkScrollerNext.addEventListener(
+            "click", () => scrollTo(
+                "forward", 
+                [timelineChunkCollection, playerChunkCollection], 
+                [TIMELINE_CHUNK_ACTIVE_CLASS, TIMELINE_CHUNK_INNER_CLASS, PLAYER_CHUNK_ACTIVE_CLASS]
+            ))
 
-        setInterval(() => {
-            const { currentInnerNode, currentInnerNodeWidth, nextNode } = getActiveChunkElems(timelineChunkCollection, "timeline-chunk-active", "timeline-chunk-inner")
-
-            if (currentInnerNodeWidth === 100) {
-                switchTo("forward", [timelineChunkCollection, playerChunkCollection])
-                if (nextNode) currentInnerNode.style.width = ""
-                return
-            }
-
-            currentInnerNode.style.width = `${currentInnerNodeWidth + step}%`
-
-        }, 2000 * step / 100)
+        setAutoScroll(() => scrollTo(
+            "forward", 
+            [timelineChunkCollection, playerChunkCollection], 
+            [TIMELINE_CHUNK_ACTIVE_CLASS, TIMELINE_CHUNK_INNER_CLASS, PLAYER_CHUNK_ACTIVE_CLASS]
+        ), 
+            STEP, 
+            timelineChunkCollection, 
+            [TIMELINE_CHUNK_ACTIVE_CLASS, TIMELINE_CHUNK_INNER_CLASS]
+        )
     })
 })()
