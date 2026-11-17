@@ -14,13 +14,13 @@ import { getActiveChunkElems } from "./oper/getChunkElems.js"
         playerChunkSwitcherNext.addEventListener("click", forward)
 
         setInterval(() => {
-            const { currentNode } = getActiveChunkElems(timelineChunkCollection, "timeline-chunk-active")
+            const { currentNode, nextNode } = getActiveChunkElems(timelineChunkCollection, "timeline-chunk-active")
             const currentInnerNode = currentNode.querySelector(".timeline-chunk-inner")
             let currentInnerNodeWidth = parseFloat(currentInnerNode.style.width) || 0
 
             if (currentInnerNodeWidth === 100) {
-                //currentInnerNodeWidth = ""
                 forward()
+                if (nextNode) currentInnerNode.style.width = ""
                 return
             }
 
