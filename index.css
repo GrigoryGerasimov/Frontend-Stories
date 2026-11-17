@@ -50,7 +50,7 @@ body {
     display: block;
 }
 
-.player-chunk-switcher {
+.player-chunk-scroller {
     position: absolute;
     width: 30%;
     height: 100%;
