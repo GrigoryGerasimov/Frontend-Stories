@@ -4,9 +4,11 @@ import { PlayerImage } from "./PlayerImage.js"
 function PlayerChunk() {
     if (!new.target) return new PlayerChunk()
 
+    this.elem
+
     this.create = function (playerImageParams) {
         const newPlayerChunk = createElem({elemTag: "div", elemClasses: ["player-chunk"]})
-        new PlayerImage.create(playerImageParams).mount(newPlayerChunk)
+        PlayerImage().create(playerImageParams).mount(newPlayerChunk)
         this.elem = newPlayerChunk
         return this
     }

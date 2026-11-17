@@ -4,9 +4,11 @@ import { TimelineChunkInner } from "./TimelineChunkInner.js"
 function TimelineChunk() {
     if (!new.target) return new TimelineChunk()
 
+    this.elem
+
     this.create = function () {
         const newTimelineChunk = createElem({elemTag: "div", elemClasses: ["timeline-chunk"]})
-        new TimelineChunkInner().create().mount(newTimelineChunk)
+        TimelineChunkInner().create().mount(newTimelineChunk)
         this.elem = newTimelineChunk
         return this
     }
@@ -15,6 +17,8 @@ function TimelineChunk() {
         if (this.elem) parentElem.append(this.elem)
         return this
     }
+
+    return this.elem
 }
 
 export { TimelineChunk }
