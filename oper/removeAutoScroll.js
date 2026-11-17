@@ -1,5 +1,5 @@
-function removeAutoScroll(autoScroll) {
-    clearInterval(autoScroll)
+function removeAutoScroll(timer) {
+    clearInterval(timer)
 }
 
 export { removeAutoScroll }
