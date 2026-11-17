@@ -17,8 +17,6 @@ function TimelineChunk() {
         if (this.elem) parentElem.append(this.elem)
         return this
     }
-
-    return this.elem
 }
 
 export { TimelineChunk }
