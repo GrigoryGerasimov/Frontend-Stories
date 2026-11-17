@@ -1,25 +1,10 @@
 import { scrollTo } from "./oper/scrollTo.js"
 import { setAutoScroll } from "./oper/setAutoScroll.js"
-import { TimelineContainer } from "./Elements/Timeline/TimelineContainer.js"
-import { PlayerContentContainer } from "./Elements/Player/PlayerContentContainer.js"
-import { TimelineChunk } from "./Elements/Timeline/TimelineChunk.js"
-import { PlayerChunk } from "./Elements/Player/PlayerChunk.js"
+import { initApp } from "./App/App.js"
 
-function initPlayer(paramsObj) {
-    const { target, chunks, delayPerChunk } = paramsObj
-    const myPlayer = document.querySelector(target)
-    
-    const timelineContainer = TimelineContainer().create().mount(myPlayer).elem
-    const playerContentContainer = PlayerContentContainer().create().mount(myPlayer).elem
 
-    for (const chunk of chunks) {
-        TimelineChunk().create().mount(timelineContainer)
-        PlayerChunk().create(chunk).mount(playerContentContainer)
-    }
-    
-}
 
-initPlayer({
+initApp({
     target: ".my-player",
     chunks: [
         {url: "./img/alex-azabache-8L7mOETNgHA-unsplash.jpg", alt: "Pirámida mexicana"},
