@@ -9,14 +9,14 @@ function initPlayer(paramsObj) {
     const { target, chunks, delayPerChunk } = paramsObj
     const myPlayer = document.querySelector(target)
     
-    const timelineContainer = TimelineContainer().create().mount(myPlayer)
-    const playerContentContainer = PlayerContentContainer().create().mount(myPlayer)
+    const timelineContainer = TimelineContainer().create().mount(myPlayer).elem
+    const playerContentContainer = PlayerContentContainer().create().mount(myPlayer).elem
 
     for (const chunk of chunks) {
         TimelineChunk().create().mount(timelineContainer)
         PlayerChunk().create(chunk).mount(playerContentContainer)
     }
-
+    
 }
 
 initPlayer({
