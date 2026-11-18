@@ -1,6 +1,7 @@
 import { Player } from "../Elements/Player/Player.js"
 import { scrollTo } from "../oper/scrollTo.js"
 import { setAutoScroll } from "../oper/setAutoScroll.js"
+import { removeAutoScroll } from "../oper/removeAutoScroll.js"
 
 const TIMELINE_CHUNK_ACTIVE_CLASS = "timeline-chunk-active"
 const TIMELINE_CHUNK_INNER_CLASS = "timeline-chunk-inner"
@@ -41,7 +42,9 @@ function mountApp({ playerImageParams, delayPerChunk = 3000, stepPerChunk = 1 })
 
     if (timelineChunkCollection && playerChunkCollection) {
         try {
-            setAutoScroll(() => scrollTo(
+            let autoScrollTimer
+            if (autoScrollTimer) removeAutoScroll(autoScrollTimer)
+            autoScrollTimer = setAutoScroll(() => scrollTo(
                 "forward",
                 [timelineChunkCollection, playerChunkCollection],
                 [TIMELINE_CHUNK_ACTIVE_CLASS, TIMELINE_CHUNK_INNER_CLASS, PLAYER_CHUNK_ACTIVE_CLASS]
