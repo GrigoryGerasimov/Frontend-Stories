@@ -7,10 +7,10 @@ function Player() {
 
     this.elem
 
-    this.create = function (playerImageParams) {
+    this.create = function (playerChunkParams) {
         const player = createElem({ elemTag: "div", elemClasses: ["player"] })
-        TimelineContainer().create(playerImageParams).mount(player)
-        PlayerContainer().create(playerImageParams).mount(player)
+        TimelineContainer().create(playerChunkParams).mount(player)
+        PlayerContainer().create(playerChunkParams).mount(player)
         this.elem = player
         return this
     }

@@ -11,13 +11,13 @@ function PlayerContainer() {
 
     this.elem
 
-    this.create = function (playerImageParams) {
+    this.create = function (playerChunkParams) {
         const playerContainer = createElem({ elemTag: "div", elemClasses: ["player-container"] })
         for (const playerChunkScrollerDirectionClass of PLAYER_CHUNK_SCROLLER_DIRECTION_CLASSES) {
             const playerChunkScrollerFinalClasses = [...PLAYER_CHUNK_SCROLLER_CLASSES, playerChunkScrollerDirectionClass]
             PlayerChunkScroller().create(playerChunkScrollerFinalClasses).mount(playerContainer)
         }
-        PlayerContentContainer().create(PLAYER_CHUNK_CLASSES, playerImageParams).mount(playerContainer)
+        PlayerContentContainer().create(PLAYER_CHUNK_CLASSES, playerChunkParams).mount(playerContainer)
         this.elem = playerContainer
         return this
     }
