@@ -12,9 +12,6 @@ const playerImages = [
     { src: "./img/marv-watson-UfK0P6WygEE-unsplash.jpg", alt: "Pirámida de los Maya" },
     { src: "./img/megumi-sugiyama-17SkY0uq23A-unsplash.jpg", alt: "Calle oaxaqueña" },
 ]
-const playerChunkScrollerClasses = [
-    "player-chunk-prev", "player-chunk-next"
-]
 
 window.addEventListener("load", () => {
     const TIME = 5000
@@ -25,8 +22,7 @@ window.addEventListener("load", () => {
 
     mountApp({
         chunkParams: {
-            playerImageParams: playerImages,
-            playerChunkScrollerClasses
+            playerImageParams: playerImages
         },
         delayPerChunk: TIME
     })
@@ -39,7 +35,6 @@ window.addEventListener("load", () => {
     if (playerChunkScrollerPrev && playerChunkScrollerNext) {
         playerChunkScrollerPrev.addEventListener(
             "click", () => {
-                console.log("prev checked")
                 scrollTo(
                     "back",
                     [timelineChunkCollection, playerChunkCollection],

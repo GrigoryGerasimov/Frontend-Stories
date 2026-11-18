@@ -3,18 +3,19 @@ import { PlayerChunkScroller } from "./PlayerChunkScroller.js"
 import { PlayerContentContainer } from "./PlayerContentContainer.js"
 
 const PLAYER_CHUNK_CLASSES = ["player-chunk"]
+const PLAYER_CHUNK_SCROLLER_CLASSES = ["player-chunk-scroller"]
+const PLAYER_CHUNK_SCROLLER_DIRECTION_CLASSES = ["player-chunk-prev", "player-chunk-next"]
 
 function PlayerContainer() {
     if (!new.target) return new PlayerContainer()
 
     this.elem
 
-    this.create = function (playerChunkScrollerClasses, playerImageParams) {
+    this.create = function (playerImageParams) {
         const playerContainer = createElem({ elemTag: "div", elemClasses: ["player-container"] })
-        if (playerChunkScrollerClasses) {
-            for (const playerChunkScrollerClass of playerChunkScrollerClasses) {
-                PlayerChunkScroller().create([playerChunkScrollerClass]).mount(playerContainer)
-            }
+        for (const playerChunkScrollerDirectionClass of PLAYER_CHUNK_SCROLLER_DIRECTION_CLASSES) {
+            const playerChunkScrollerFinalClasses = [...PLAYER_CHUNK_SCROLLER_CLASSES, playerChunkScrollerDirectionClass]
+            PlayerChunkScroller().create(playerChunkScrollerFinalClasses).mount(playerContainer)
         }
         PlayerContentContainer().create(PLAYER_CHUNK_CLASSES, playerImageParams).mount(playerContainer)
         this.elem = playerContainer
