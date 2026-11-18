@@ -22,7 +22,7 @@ function setAutoScroll(scroll, time, step, collection, classes) {
 
     const autoScrollTimer = setInterval(() => {
         const { currentInnerNode, currentInnerNodeWidth, nextNode } = getActiveChunkElems(collection, timelineChunkActiveClass, timelineChunkInnerClass)
-console.log("check")
+
         if (currentInnerNodeWidth === 100) {
             scroll()
             if (nextNode) currentInnerNode.style.width = ""

@@ -8,12 +8,12 @@ function TimelineContainer() {
 
     this.elem
 
-    this.create = function (playerImageParams) {
+    this.create = function (playerChunkParams) {
         const newTimelineContainer = createElem({elemTag: "div", elemClasses: ["timeline"]})
-        if (playerImageParams) {
-            playerImageParams.forEach((playerImageParam, playerImageParamIndex) => {
+        if (playerChunkParams) {
+            playerChunkParams.forEach((playerChunkParam, playerChunkParamIndex) => {
                 let timelineChunkFinalClasses = [...TIMELINE_CHUNK_CLASSES]
-                if (playerImageParamIndex === 0) timelineChunkFinalClasses = [...TIMELINE_CHUNK_CLASSES, "timeline-chunk-active"]
+                if (playerChunkParamIndex === 0) timelineChunkFinalClasses = [...TIMELINE_CHUNK_CLASSES, "timeline-chunk-active"]
                 TimelineChunk().create(timelineChunkFinalClasses).mount(newTimelineContainer)
             })
         }

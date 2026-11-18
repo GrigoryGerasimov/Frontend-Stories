@@ -44,6 +44,11 @@ body {
 
 .player-chunk {
     display: none;
+    position: relative;
+}
+
+.player-chunk-overlay {
+    position: absolute;
 }
 
 .player-chunk-active {
