@@ -7,7 +7,7 @@ function Player() {
 
     this.elem
 
-    this.create = function ({ playerImageParams }) {
+    this.create = function (playerImageParams) {
         const player = createElem({ elemTag: "div", elemClasses: ["player"] })
         TimelineContainer().create(playerImageParams).mount(player)
         PlayerContainer().create(playerImageParams).mount(player)
