@@ -6,12 +6,14 @@ function PlayerContentContainer() {
 
     this.elem
 
-    this.create = function (playerChunkClasses) {
-        const playerContentContainer = createElem({elemTag: "div", elemClasses: ["player-content"]})
-        if (playerChunkClasses) {
-            for (const playerChunkClass of playerChunkClasses) {
-                PlayerChunk().create(playerChunkClass).mount(playerContentContainer)
-            }
+    this.create = function (playerChunkClasses, playerImageParams) {
+        const playerContentContainer = createElem({ elemTag: "div", elemClasses: ["player-content"] })
+        if (playerImageParams) {
+            playerImageParams.forEach((playerImageParam, playerImageParamIndex) => {
+                let playerChunkFinalClasses = [...playerChunkClasses]
+                if (playerImageParamIndex === 0) playerChunkFinalClasses = [...playerChunkClasses, "player-chunk-active"]
+                PlayerChunk().create({ playerChunkClasses: playerChunkFinalClasses, playerImageParams: playerImageParam }).mount(playerContentContainer)
+            })
         }
         this.elem = playerContentContainer
         return this

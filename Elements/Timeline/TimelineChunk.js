@@ -6,8 +6,8 @@ function TimelineChunk() {
 
     this.elem
 
-    this.create = function () {
-        const newTimelineChunk = createElem({elemTag: "div", elemClasses: ["timeline-chunk"]})
+    this.create = function (timelineChunkClasses) {
+        const newTimelineChunk = createElem({elemTag: "div", elemClasses: timelineChunkClasses})
         TimelineChunkInner().create().mount(newTimelineChunk)
         this.elem = newTimelineChunk
         return this

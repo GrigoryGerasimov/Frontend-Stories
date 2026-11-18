@@ -6,8 +6,8 @@ function PlayerChunk() {
 
     this.elem
 
-    this.create = function (playerImageParams) {
-        const newPlayerChunk = createElem({elemTag: "div", elemClasses: ["player-chunk"]})
+    this.create = function ({playerChunkClasses, playerImageParams}) {
+        const newPlayerChunk = createElem({elemTag: "div", elemClasses: playerChunkClasses})
         PlayerImage().create(playerImageParams).mount(newPlayerChunk)
         this.elem = newPlayerChunk
         return this
