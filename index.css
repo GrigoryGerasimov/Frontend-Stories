@@ -57,6 +57,7 @@ body {
 
 .player-chunk-scroller {
     position: absolute;
+    z-index: 99999;
     width: 30%;
     height: 100%;
 }
