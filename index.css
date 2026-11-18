@@ -49,6 +49,7 @@ body {
 
 .player-chunk-overlay {
     position: absolute;
+    user-select: none;
 }
 
 .player-chunk-active {
@@ -70,4 +71,10 @@ body {
 .player-chunk-next {
     top: 0;
     right: 0;
+}
+
+@keyframes scale {
+    50% {
+        transform: scale(2)
+    }
 }

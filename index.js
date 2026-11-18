@@ -20,7 +20,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -32,7 +33,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -54,7 +56,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -66,7 +69,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -88,7 +92,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -100,7 +105,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -122,7 +128,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -134,7 +141,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -156,7 +164,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -168,7 +177,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -190,7 +200,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -202,7 +213,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -224,7 +236,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -236,7 +249,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
@@ -258,7 +272,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "60%",
                         left: "30%",
-                        transform: "rotate(-30deg)"
+                        transform: "rotate(-30deg)",
+                        animation: "scale 2s infinite ease-in-out"
                     }
                 },
                 {
@@ -270,7 +285,8 @@ const playerChunks = [
                         "text-shadow": "1px 1px #000",
                         top: "10%",
                         left: "30%",
-                        transform: "rotate(-90deg)"
+                        transform: "rotate(-90deg)",
+                        animation: "scale 3s infinite ease-in-out"
                     }
                 }
             ]
