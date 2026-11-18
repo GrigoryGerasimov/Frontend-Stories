@@ -1,5 +1,12 @@
 import { getActiveChunkElems } from "./getActiveChunkElems.js"
 
+/**
+ * @description The scrollTo function maintains the main scrolling logic.
+ * @param {string} to - indicates the direction of scrolling: either backwards or forwards.
+ * @param {Nodelist} collectionArr - nodelists of timeline chunks and player chunks.
+ * @param {Array<string>} classes - additional classnames for timeline chunks and player chunks.
+ * @returns {undefined} The function contains the main scrolling logic without returning anything, if both to-directions turn out to be different than expected, the function returns undefined.
+ */
 function scrollTo(to, collectionArr, classes) {
     const [timelineChunkCollection, playerChunkCollection] = collectionArr
     const [timelineChunkActiveClass, timelineChunkInnerClass, playerChunkActiveClass] = classes

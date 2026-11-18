@@ -1,3 +1,11 @@
+/**
+ * @description A DOM utils function that assists on creating a new node element.
+ * @param {string} elemTag - a tag for the new element to be created.
+ * @param {Array<string>} elemClasses - a collection of classes to be assigned to the new element to be created.
+ * @param {Object} elemParams - further parameters to be assigned to the new element to be created.
+ * @returns {Element} Returns the created new element.
+ * @throws {Error} Throws a new error if the elemClasses have not been passed through as arrays or if the elemParams have not been passed through as objects.
+ */
 function createElem({ elemTag, elemClasses, elemParams }) {
     const newElem = document.createElement(elemTag)
 
